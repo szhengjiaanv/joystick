@@ -18,5 +18,6 @@
     "joystick.Gamepad_Status|block": "当按钮 %button 被 %status 时",
     "joystick.Gamepad_Wiggly|block": "游戏手柄摇杆获取 %rock %axial 的值",
     "Wiggly.JOYSTICK_left_wi|block": "左侧",
-    "Wiggly.JOYSTICK_right_wi|block": "右侧"
+    "Wiggly.JOYSTICK_right_wi|block": "右侧",
+    "joystick.FunbitMotorStopAll|block": "停止所有电机"
 }

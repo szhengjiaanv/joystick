@@ -41,7 +41,12 @@ enum Wiggly {
 
 //% color="#FFA500" weight=10 icon="\uf2c9" block="Joystick:bit"
 namespace joystick {
-
+    const ADDR = 0x10
+    const CMD_MOTOR = 0x10
+    const CMD_ALL = 0xFF
+    const CMD_STOP = 0x00
+    const CMD_SERVO = 0x11
+    const CMD_RGBLED = 0x12
     let i2cAddr: number
     let BK: number
     let RS: number
@@ -211,6 +216,17 @@ namespace joystick {
             }
         }
         return val;
+    }
+
+    //% weight=87
+    //% blockId=FunbitMotorStopAll block="Motor StopAll"
+    export function FunbitMotorStopAll(): void {
+        let buf = pins.createBuffer(4);
+        buf[0] = CMD_MOTOR;
+        buf[1] = CMD_ALL;
+        buf[2] = CMD_STOP; //stop
+        buf[3] = 0x00;
+        pins.i2cWriteBuffer(ADDR, buf);
     }
 }
 
